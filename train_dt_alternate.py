@@ -141,6 +141,7 @@ if __name__ == '__main__':
         serials_train, actions_train, serials_val, actions_val = split_train_test(cur_serials, cur_actions, train_frac)
         #dt_policy = DecisionTreeClassifier(max_leaf_nodes=args.leaf_nodes)
         #dt_policy.fit(serials_train, actions_train)
+        print("---UPDATED XGB -----")
         dt_policy = xgb.XGBClassifier( learning_rate =0.1, n_estimators=1000,max_depth=5, min_child_weight=1, gamma=0,subsample=0.8,colsample_bytree=0.8,nthread=4,scale_pos_weight=1,seed=27)
         dt_policy.fit(serials_train, actions_train)
 
