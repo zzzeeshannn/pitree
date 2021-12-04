@@ -141,7 +141,7 @@ if __name__ == '__main__':
         serials_train, actions_train, serials_val, actions_val = split_train_test(cur_serials, cur_actions, train_frac)
         #dt_policy = DecisionTreeClassifier(max_leaf_nodes=args.leaf_nodes)
         #dt_policy.fit(serials_train, actions_train)
-        dt_policy = xgb.XGBClassifier()
+        dt_policy = xgb.XGBRFClassifier(max_depth = 3, n_estimators = 100, learning_rate = 0.1, colsample_bytree = 0.5, subsample = 0.6)
         dt_policy.fit(serials_train, actions_train)
 
         t4 = time.time()
