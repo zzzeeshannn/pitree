@@ -132,6 +132,7 @@ if __name__ == '__main__':
     actions.extend((action for _, action, _ in trace))
     serials.extend(serial for _, _, serial in trace)
 
+    print("--ID3--")
     for i in range(max_iters):
         # Step 2:
         print('Iteration {}/{}'.format(i, max_iters))
