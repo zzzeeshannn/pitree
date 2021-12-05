@@ -141,7 +141,6 @@ if __name__ == '__main__':
         serials_train, actions_train, serials_val, actions_val = split_train_test(cur_serials, cur_actions, train_frac)
         #dt_policy = DecisionTreeClassifier(max_leaf_nodes=args.leaf_nodes)
         #dt_policy.fit(serials_train, actions_train)
-        print("---2nd UPDATED XGB -----")
         dt_policy = Id3Estimator()
         dt_policy.fit(serials_train, actions_train)
 
@@ -194,7 +193,7 @@ if __name__ == '__main__':
     #         max_reward = reward
 
     # save decision tree to file
-    with open('decision_tree/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.pk3', 'wb') as f:
+    with open('decision_tree/' + 'id3_'+ args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.pk3', 'wb') as f:
         pk.dump(best_tree, f)
 
     if args.visualize:
