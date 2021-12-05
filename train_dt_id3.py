@@ -203,11 +203,11 @@ if __name__ == '__main__':
         out_graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
         out_graph.write_svg('tree/' + args.abr + '.svg')
 
-    with open('precision/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'wb') as f:
+    with open('precision/' + 'id3_'+ args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'wb') as f:
         for i in precision:
             f.write(bytes(str(i) + '\n', encoding='utf-8'))
 
-    with open('time/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'w', newline='') as f:
+    with open('time/' + 'id3_'+ args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         for time_breakdown in time_calc:
             writer.writerow(time_breakdown)
