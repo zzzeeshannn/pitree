@@ -132,6 +132,7 @@ if __name__ == '__main__':
     actions.extend((action for _, action, _ in trace))
     serials.extend(serial for _, _, serial in trace)
 
+    print("---ADA---")
     for i in range(max_iters):
         # Step 2:
         print('Iteration {}/{}'.format(i, max_iters))
@@ -193,7 +194,7 @@ if __name__ == '__main__':
     #         max_reward = reward
 
     # save decision tree to file
-    with open('decision_tree/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.pk3', 'wb') as f:
+    with open('decision_tree/' + 'ada_' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.pk3', 'wb') as f:
         pk.dump(best_tree, f)
 
     if args.visualize:
@@ -202,11 +203,11 @@ if __name__ == '__main__':
         out_graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
         out_graph.write_svg('tree/' + args.abr + '.svg')
 
-    with open('precision/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'wb') as f:
+    with open('precision/' + 'ada_' +args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'wb') as f:
         for i in precision:
             f.write(bytes(str(i) + '\n', encoding='utf-8'))
 
-    with open('time/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'w', newline='') as f:
+    with open('time/' + 'ada_' +args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         for time_breakdown in time_calc:
             writer.writerow(time_breakdown)
