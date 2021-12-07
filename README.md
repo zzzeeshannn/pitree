@@ -22,6 +22,9 @@ In case of running the server provided by the original authors, but introducing 
 
 "# tc qdisc add dev lo root netem delay 5ms"
 
+decision_tree.zip holds the trained models that can be unpacked.
+log files for precision, time, rebuf etc can be found in their respective zip files to be unpacked. 
+
 # PiTree
 
 PiTree is a conversion tool to automatically and faithfully convert complex adaptive bitrate algorithms into lightweight decision trees. This repository is the official release of the following paper:
