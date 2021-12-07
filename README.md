@@ -5,6 +5,16 @@ train_dt_alternate.py includes the Decision Tree with XGBoostClassifier.
 train_dt_ada.py is used to train PiTree with ADABoost as the underlying tree. 
 train_dt_id3.py is used to train PiTree with ID3 as the underlying tree. 
 
+
+IMPORTANT: 
+
+https://pypi.org/project/decision-tree-id3/
+
+Follow the setup steps here to make sure ID3 works properly. 
+
+The ipynb notebooks where we conducted our experiments are saved as pitree.ipynb and pitree-2.ipynb! 
+
+
 The script to read the log_files and generate the graph is named under csv_log.py and graph.py
 
 Server for the overhead analysis can be found in dash_pitree.ipynb 
