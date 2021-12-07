@@ -1,3 +1,17 @@
+Forked file from PiTree.
+
+The additional added files follow the same syntax as mentioned below by the original authors. 
+train_dt_alternate.py includes the Decision Tree with XGBoostClassifier. 
+train_dt_ada.py is used to train PiTree with ADABoost as the underlying tree. 
+train_dt_id3.py is used to train PiTree with ID3 as the underlying tree. 
+
+The script to read the log_files and generate the graph is named under csv_log.py and graph.py
+
+Server for the overhead analysis can be found in dash_pitree.ipynb 
+In case of running the server provided by the original authors, but introducing a delay, use tc to introduce network delay 
+
+"# tc qdisc add dev lo root netem delay 5ms"
+
 # PiTree
 
 PiTree is a conversion tool to automatically and faithfully convert complex adaptive bitrate algorithms into lightweight decision trees. This repository is the official release of the following paper:
